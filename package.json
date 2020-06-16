@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "preinstall": "node -e \"if(!/yarn\\.js$/.test(process.env.npm_execpath))throw new Error('Use yarn')\"",
-    "postinstall": "yarn run build",
+    "postinstall": "test -n \"$DOCKER_ENV\" ||  yarn run build",
     "clean:dist": "rm -rf dist && rm -f .buildcache",
     "prebuild": "yarn run lint && yarn run clean:dist",
     "build": "yarn run tsc -p tsconfig.json",
