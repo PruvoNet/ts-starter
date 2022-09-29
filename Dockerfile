@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:16-alpine
 
 COPY package.json /usr/local/bin/service/
 COPY yarn.lock /usr/local/bin/service/
